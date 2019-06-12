@@ -21,9 +21,9 @@ const sessionConfig = {
   store: new SessionStore({
     knex: require("../database/dbConfig"),
     tablename: "sessions",
-    sidfieldname: "sid",
-    createtable: true,
-    clearInterval: 60 * 60 * 1000
+    sidfieldname: "sid", // which column to store the session ID, SID.
+    createtable: true, // creates table if it doesn't exist through our migrations.
+    clearInterval: 60 * 60 * 1000 // time in session before it expires. // 60 minutes, 60 seconds, 1000 miliseconds
   })
 };
 
